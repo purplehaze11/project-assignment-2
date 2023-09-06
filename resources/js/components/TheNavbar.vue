@@ -1,7 +1,12 @@
 <template>
     <div id="navbar">
         <h1>Tosa</h1>
-        <ActionButton data-bs-toggle="modal" data-bs-target="#exampleModal" text="Cart" />
+        <ActionButton
+            class="btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            text="Cart"
+        />
     </div>
 </template>
 
