@@ -6,7 +6,8 @@
             <div>
                 <p class="card-text">harga: {{ product.harga }}</p>
                 <p class="card-text">stok: {{ product.stok }}</p>
-                <ActionButton class="btn-primary" />
+                <ActionButton v-if="product.stok != 0" @click="reduceStock" class="btn-primary" text="Add to cart" />
+                <ActionButton v-else class="btn-danger" text="Stok habis" disabled />
             </div>
         </div>
     </div>
@@ -23,6 +24,11 @@ export default {
     props: {
         product: {
             type: Object,
+        },
+    },
+    methods: {
+        reduceStock() {
+            this.product.stok -= 1;
         },
     },
 };

@@ -20,34 +20,40 @@ export default {
         return {
             products: [
                 {
+                    id: "1",
                     name: "Buku Tulis",
                     harga: "12.000",
-                    stok: "250",
+                    stok: 250,
                 },
                 {
+                    id: "2",
                     name: "Jaket hitam",
                     harga: "149.000",
-                    stok: "24",
+                    stok: 24,
                 },
                 {
+                    id: "3",
                     name: "Sepatu Merah",
                     harga: "210.000",
-                    stok: "15",
+                    stok: 15,
                 },
                 {
+                    id: "4",
                     name: "Lemari Kayu",
                     harga: "430.000",
-                    stok: "3",
+                    stok: 1,
                 },
                 {
+                    id: "5",
                     name: "Televisi",
                     harga: "2.200.000",
-                    stok: "5",
+                    stok: 5,
                 },
                 {
+                    id: "6",
                     name: "Gorden",
                     harga: "320.000",
-                    stok: "20",
+                    stok: 7,
                 },
             ],
         };

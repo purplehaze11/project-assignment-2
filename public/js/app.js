@@ -19818,7 +19818,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "ActionButton"
+  name: "ActionButton",
+  props: {
+    text: {
+      type: String,
+      required: false
+    }
+  }
 });
 
 /***/ }),
@@ -19850,29 +19856,35 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       products: [{
+        id: "1",
         name: "Buku Tulis",
         harga: "12.000",
-        stok: "250"
+        stok: 250
       }, {
+        id: "2",
         name: "Jaket hitam",
         harga: "149.000",
-        stok: "24"
+        stok: 24
       }, {
+        id: "3",
         name: "Sepatu Merah",
         harga: "210.000",
-        stok: "15"
+        stok: 15
       }, {
+        id: "4",
         name: "Lemari Kayu",
         harga: "430.000",
-        stok: "3"
+        stok: 1
       }, {
+        id: "5",
         name: "Televisi",
         harga: "2.200.000",
-        stok: "5"
+        stok: 5
       }, {
+        id: "6",
         name: "Gorden",
         harga: "320.000",
-        stok: "20"
+        stok: 7
       }]
     };
   }
@@ -19918,6 +19930,11 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     product: {
       type: Object
+    }
+  },
+  methods: {
+    reduceStock: function reduceStock() {
+      this.product.stok -= 1;
     }
   }
 });
@@ -19991,7 +20008,7 @@ var _hoisted_1 = {
   "class": "btn btn-primary"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_1, "text");
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.text), 1 /* TEXT */);
 }
 
 /***/ }),
@@ -20086,9 +20103,17 @@ var _hoisted_6 = {
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_ActionButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ActionButton");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.product.name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_5, "harga: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.product.harga), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_6, "stok: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.product.stok), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ActionButton, {
-    "class": "btn-primary"
-  })])])]);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.product.name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_5, "harga: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.product.harga), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_6, "stok: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.product.stok), 1 /* TEXT */), $props.product.stok != 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_ActionButton, {
+    key: 0,
+    onClick: $options.reduceStock,
+    "class": "btn-primary",
+    text: "Add to cart"
+  }, null, 8 /* PROPS */, ["onClick"])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_ActionButton, {
+    key: 1,
+    "class": "btn-danger",
+    text: "Stok habis",
+    disabled: ""
+  }))])])]);
 }
 
 /***/ }),
@@ -20145,7 +20170,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_ActionButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ActionButton");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ActionButton, {
     "data-bs-toggle": "modal",
-    "data-bs-target": "#exampleModal"
+    "data-bs-target": "#exampleModal",
+    text: "Cart"
   })]);
 }
 
