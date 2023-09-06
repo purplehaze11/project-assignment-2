@@ -19978,9 +19978,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_TheNavbar = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("TheNavbar");
   var _component_ProductScreen = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ProductScreen");
   var _component_CartModal = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("CartModal");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_TheNavbar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ProductScreen), $data.modal == true ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_CartModal, {
-    key: 0
-  })) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 64 /* STABLE_FRAGMENT */);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_TheNavbar, {
+    onButtonSwitch: _ctx.modalSwitch
+  }, null, 8 /* PROPS */, ["onButtonSwitch"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ProductScreen), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_CartModal)], 64 /* STABLE_FRAGMENT */);
 }
 
 /***/ }),
@@ -20101,7 +20101,10 @@ var _hoisted_2 = /*#__PURE__*/_withScopeId(function () {
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_ActionButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ActionButton");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ActionButton)]);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ActionButton, {
+    "data-bs-toggle": "modal",
+    "data-bs-target": "#exampleModal"
+  })]);
 }
 
 /***/ }),

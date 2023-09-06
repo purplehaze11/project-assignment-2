@@ -1,7 +1,7 @@
 <template>
     <div id="navbar">
         <h1>Tosa</h1>
-        <ActionButton />
+        <ActionButton data-bs-toggle="modal" data-bs-target="#exampleModal" />
     </div>
 </template>
 

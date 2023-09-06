@@ -1,7 +1,7 @@
 <template>
-    <TheNavbar />
+    <TheNavbar @buttonSwitch="modalSwitch" />
     <ProductScreen />
-    <CartModal v-if="modal == true" />
+    <CartModal />
 </template>
 
 <script>
@@ -13,8 +13,8 @@ export default {
     name: "App",
     data() {
         return {
-            modal: false
-        }
+            modal: false,
+        };
     },
     components: {
         TheNavbar,
