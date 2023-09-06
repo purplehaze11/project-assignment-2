@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ProductCard />
+        <ProductCard v-for="product in products" :product="product" :key="product.name" />
     </div>
 </template>
 
@@ -11,6 +11,12 @@ export default {
     name: "ProductScreen",
     components: {
         ProductCard,
+    },
+    props: {
+        products: {
+            type: Array,
+            required: true,
+        },
     },
 };
 </script>

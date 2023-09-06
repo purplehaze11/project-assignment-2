@@ -19842,15 +19842,39 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "App",
-  data: function data() {
-    return {
-      modal: false
-    };
-  },
   components: {
     TheNavbar: _TheNavbar_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     ProductScreen: _ProductScreen_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     CartModal: _CartModal_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  data: function data() {
+    return {
+      products: [{
+        name: "Buku Tulis",
+        harga: "12.000",
+        stok: "250"
+      }, {
+        name: "Jaket hitam",
+        harga: "149.000",
+        stok: "24"
+      }, {
+        name: "Sepatu Merah",
+        harga: "210.000",
+        stok: "15"
+      }, {
+        name: "Lemari Kayu",
+        harga: "430.000",
+        stok: "3"
+      }, {
+        name: "Televisi",
+        harga: "2.200.000",
+        stok: "5"
+      }, {
+        name: "Gorden",
+        harga: "320.000",
+        stok: "20"
+      }]
+    };
   }
 });
 
@@ -19890,6 +19914,11 @@ __webpack_require__.r(__webpack_exports__);
   name: "ProductCard",
   components: {
     ActionButton: _ActionButton_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  props: {
+    product: {
+      type: Object
+    }
   }
 });
 
@@ -19912,6 +19941,12 @@ __webpack_require__.r(__webpack_exports__);
   name: "ProductScreen",
   components: {
     ProductCard: _ProductCard_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  props: {
+    products: {
+      type: Array,
+      required: true
+    }
   }
 });
 
@@ -19978,9 +20013,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_TheNavbar = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("TheNavbar");
   var _component_ProductScreen = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ProductScreen");
   var _component_CartModal = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("CartModal");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_TheNavbar, {
-    onButtonSwitch: _ctx.modalSwitch
-  }, null, 8 /* PROPS */, ["onButtonSwitch"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ProductScreen), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_CartModal)], 64 /* STABLE_FRAGMENT */);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_TheNavbar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ProductScreen, {
+    products: $data.products
+  }, null, 8 /* PROPS */, ["products"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_CartModal)], 64 /* STABLE_FRAGMENT */);
 }
 
 /***/ }),
@@ -20040,16 +20075,18 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 var _hoisted_3 = {
   "class": "card-body"
 };
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
+var _hoisted_4 = {
   "class": "card-title"
-}, "product name", -1 /* HOISTED */);
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+};
+var _hoisted_5 = {
   "class": "card-text"
-}, "stok: number", -1 /* HOISTED */);
-
+};
+var _hoisted_6 = {
+  "class": "card-text"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_ActionButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ActionButton");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ActionButton, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.product.name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_5, "harga: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.product.harga), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_6, "stok: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.product.stok), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ActionButton, {
     "class": "btn-primary"
   })])])]);
 }
@@ -20071,7 +20108,12 @@ __webpack_require__.r(__webpack_exports__);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_ProductCard = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ProductCard");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ProductCard)]);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.products, function (product) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_ProductCard, {
+      product: product,
+      key: product.name
+    }, null, 8 /* PROPS */, ["product"]);
+  }), 128 /* KEYED_FRAGMENT */))]);
 }
 
 /***/ }),
