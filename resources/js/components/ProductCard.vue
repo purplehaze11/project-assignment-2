@@ -29,11 +29,17 @@
 
 <script>
 import ActionButton from "./ActionButton.vue";
+import { store } from "../store.js";
 
 export default {
     name: "ProductCard",
     components: {
         ActionButton,
+    },
+    data() {
+        return {
+            store,
+        };
     },
     props: {
         product: {
@@ -43,6 +49,8 @@ export default {
     methods: {
         reduceStock() {
             this.product.stok -= 1;
+            this.product.inCart += 1;
+            store.incrementTotalInCart();
         },
     },
 };
