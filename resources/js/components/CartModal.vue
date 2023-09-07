@@ -18,7 +18,19 @@
                         aria-label="Close"
                     />
                 </div>
-                <div class="modal-body">...</div>
+                <div class="modal-body">
+                    <ul>
+                        <template
+                            v-for="product in products"
+                            :product="product"
+                            :key="product.name"
+                        >
+                            <li v-if="product.inCart > 0">
+                                <ProductInCart :product="product" />
+                            </li>
+                        </template>
+                    </ul>
+                </div>
                 <div class="modal-footer">
                     <ActionButton class="btn-danger" text="Reset Cart" />
                     <ActionButton class="btn-primary" text="Beli" />
@@ -30,11 +42,18 @@
 
 <script>
 import ActionButton from "./ActionButton.vue";
+import ProductInCart from "./ProductInCart.vue";
 
 export default {
     name: "CartModal",
     components: {
         ActionButton,
+        ProductInCart,
+    },
+    props: {
+        products: {
+            type: Array,
+        },
     },
 };
 </script>

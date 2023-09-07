@@ -1,14 +1,13 @@
 <template>
-    <TheNavbar :products="products" />
+    <TheNavbar />
     <ProductScreen :products="products" />
-    <CartModal />
+    <CartModal :products="products" />
 </template>
 
 <script>
 import TheNavbar from "./TheNavbar.vue";
 import ProductScreen from "./ProductScreen.vue";
 import CartModal from "./CartModal.vue";
-import { computed } from "vue";
 
 export default {
     name: "App",
@@ -17,14 +16,8 @@ export default {
         ProductScreen,
         CartModal,
     },
-    provide() {
-        return {
-            totalInCart: computed(() => this.totalInCart),
-        };
-    },
     data() {
         return {
-            totalInCart: 0,
             products: [
                 {
                     id: "1",
