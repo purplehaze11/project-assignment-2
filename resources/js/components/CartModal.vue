@@ -36,7 +36,12 @@
                 </div>
                 <div class="modal-footer">
                     <ActionButton class="btn-danger" text="Reset Cart" />
-                    <ActionButton class="btn-primary" text="Beli" />
+                    <ActionButton
+                        class="btn-primary"
+                        text="Beli"
+                        data-bs-target="#exampleModalToggle2"
+                        data-bs-toggle="modal"
+                    />
                 </div>
             </div>
         </div>
@@ -57,6 +62,9 @@ export default {
         products: {
             type: Array,
         },
+    },
+    methods: {
+        resetCart() {},
     },
 };
 </script>

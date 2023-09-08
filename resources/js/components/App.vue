@@ -2,12 +2,14 @@
     <TheNavbar />
     <ProductScreen :products="products" />
     <CartModal :products="products" />
+    <BoughtModal />
 </template>
 
 <script>
 import TheNavbar from "./TheNavbar.vue";
 import ProductScreen from "./ProductScreen.vue";
 import CartModal from "./CartModal.vue";
+import BoughtModal from "./BoughtModal.vue";
 
 export default {
     name: "App",
@@ -15,6 +17,7 @@ export default {
         TheNavbar,
         ProductScreen,
         CartModal,
+        BoughtModal,
     },
     data() {
         return {
