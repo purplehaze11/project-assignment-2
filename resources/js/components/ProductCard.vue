@@ -55,3 +55,9 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+.card {
+    margin: 2rem 0;
+}
+</style>

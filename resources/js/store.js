@@ -5,4 +5,10 @@ export const store = reactive({
     incrementTotalInCart() {
         this.totalInCart++;
     },
+    reduceTotalInCart() {
+        this.totalInCart--;
+    },
+    reduceTotalByProduct(num) {
+        this.totalInCart -= num;
+    },
 });

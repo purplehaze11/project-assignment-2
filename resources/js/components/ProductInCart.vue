@@ -1,14 +1,25 @@
 <template>
-    <div>
+    <div class="flex-row d-flex justify-content-between align-items-center">
         <p>{{ product.name }}</p>
         <p>{{ product.harga }}</p>
-        <button>substract by 1</button>
+        <ActionButton
+            class="btn-secondary"
+            @click="reduceProductInCart"
+            text="-"
+        />
         <p>{{ product.inCart }}</p>
-        <button>clear</button>
+        <ActionButton
+            class="btn-danger"
+            @click="clearProductInCart"
+            text="clear"
+        />
     </div>
 </template>
 
 <script>
+import ActionButton from "./ActionButton.vue";
+import { store } from "../store.js";
+
 export default {
     name: "ProductInCart",
     props: {
@@ -16,12 +27,31 @@ export default {
             type: Object,
         },
     },
+    components: {
+        ActionButton,
+    },
+    data() {
+        return {
+            store,
+        };
+    },
+    methods: {
+        reduceProductInCart() {
+            this.product.inCart--;
+            this.product.stok++;
+            store.reduceTotalInCart();
+        },
+        clearProductInCart() {
+            this.product.stok += this.product.inCart;
+            store.reduceTotalByProduct(this.product.inCart);
+            this.product.inCart = 0;
+        },
+    },
 };
 </script>
 
 <style scoped>
-div {
-    display: flex;
-    flex-direction: row;
+p {
+    margin: 0;
 }
 </style>

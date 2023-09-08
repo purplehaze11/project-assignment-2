@@ -1,6 +1,10 @@
 <template>
-    <div>
-        <ProductCard v-for="product in products" :product="product" :key="product.name" />
+    <div class="flex-wrap d-flex justify-content-around">
+        <ProductCard
+            v-for="product in products"
+            :product="product"
+            :key="product.id"
+        />
     </div>
 </template>
 

@@ -19,13 +19,16 @@
                     />
                 </div>
                 <div class="modal-body">
-                    <ul>
+                    <ul class="list-group">
                         <template
                             v-for="product in products"
                             :product="product"
-                            :key="product.name"
+                            :key="product.id"
                         >
-                            <li v-if="product.inCart > 0">
+                            <li
+                                class="list-group-item"
+                                v-if="product.inCart > 0"
+                            >
                                 <ProductInCart :product="product" />
                             </li>
                         </template>
