@@ -51,6 +51,7 @@ export default {
             this.product.stok -= 1;
             this.product.inCart += 1;
             store.incrementTotalInCart();
+            store.incrementTotalPrice(this.product.harga);
         },
     },
 };

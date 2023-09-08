@@ -10,7 +10,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">
-                        Modal 2
+                        Thank you for purchasig in Tosa
                     </h1>
                     <button
                         type="button"
@@ -19,9 +19,7 @@
                         aria-label="Close"
                     ></button>
                 </div>
-                <div class="modal-body">
-                    Hide this modal and show the first with the button below.
-                </div>
+                <div class="modal-body"><p>Your purchased item are:</p></div>
                 <div class="modal-footer">
                     <button
                         class="btn btn-primary"

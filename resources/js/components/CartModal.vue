@@ -1,15 +1,15 @@
 <template>
     <div
         class="modal fade"
-        id="exampleModal"
+        id="cartModal"
         tabindex="-1"
-        aria-labelledby="exampleModalLabel"
+        aria-labelledby="cartModalLabel"
         aria-hidden="true"
     >
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    <h1 class="modal-title fs-5" id="cartModalLabel">
                         Modal title
                     </h1>
                     <ActionButton
@@ -32,6 +32,9 @@
                                 <ProductInCart :product="product" />
                             </li>
                         </template>
+                        <li class="list-group-item">
+                            <TotalPrice />
+                        </li>
                     </ul>
                 </div>
                 <div class="modal-footer">
@@ -51,12 +54,14 @@
 <script>
 import ActionButton from "./ActionButton.vue";
 import ProductInCart from "./ProductInCart.vue";
+import TotalPrice from "./TotalPrice.vue";
 
 export default {
     name: "CartModal",
     components: {
         ActionButton,
         ProductInCart,
+        TotalPrice,
     },
     props: {
         products: {

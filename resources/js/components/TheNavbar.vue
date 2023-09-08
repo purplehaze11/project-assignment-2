@@ -4,7 +4,7 @@
         <button
             class="btn btn-primary position-relative"
             data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
+            data-bs-target="#cartModal"
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
