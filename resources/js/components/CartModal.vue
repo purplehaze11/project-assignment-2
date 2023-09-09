@@ -10,7 +10,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="cartModalLabel">
-                        Modal title
+                        Your Cart
                     </h1>
                     <ActionButton
                         class="btn-close"
@@ -19,7 +19,7 @@
                     />
                 </div>
                 <div class="modal-body">
-                    <ul class="list-group">
+                    <ul class="list-group" v-if="store.totalInCart > 0">
                         <template
                             v-for="product in products"
                             :product="product"
@@ -36,14 +36,28 @@
                             <TotalPrice />
                         </li>
                     </ul>
+                    <p
+                        v-else-if="
+                            store.isAlreadyBought == true &&
+                            store.totalInCart == 0
+                        "
+                    >
+                        Thank you for using Tosa!
+                    </p>
+                    <p v-else>You have no product in the cart</p>
                 </div>
                 <div class="modal-footer">
-                    <ActionButton class="btn-danger" text="Reset Cart" />
                     <ActionButton
-                        class="btn-primary"
-                        text="Beli"
-                        data-bs-target="#exampleModalToggle2"
-                        data-bs-toggle="modal"
+                        class="btn-success"
+                        text="Buy"
+                        @click="buyProduct"
+                        v-if="store.totalInCart > 0"
+                    />
+                    <ActionButton
+                        class="btn-success"
+                        text="Buy"
+                        v-else
+                        disabled
                     />
                 </div>
             </div>
@@ -55,6 +69,7 @@
 import ActionButton from "./ActionButton.vue";
 import ProductInCart from "./ProductInCart.vue";
 import TotalPrice from "./TotalPrice.vue";
+import { store } from "../store.js";
 
 export default {
     name: "CartModal",
@@ -69,7 +84,16 @@ export default {
         },
     },
     methods: {
-        resetCart() {},
+        buyProduct() {
+            store.resetTotal();
+            store.resetInCartData(this.products);
+            store.isAlreadyBought = true;
+        },
+    },
+    data() {
+        return {
+            store,
+        };
     },
 };
 </script>

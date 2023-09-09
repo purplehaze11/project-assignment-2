@@ -5,6 +5,8 @@ export const store = reactive({
 
     totalInCart: 0,
 
+    isAlreadyBought: false,
+
     incrementTotalPrice(price) {
         this.totalPrice += parseInt(price.split(".").join(""));
     },
@@ -27,5 +29,16 @@ export const store = reactive({
 
     reduceTotalByProduct(num) {
         this.totalInCart -= num;
+    },
+
+    resetTotal() {
+        this.totalInCart = 0;
+        this.totalPrice = 0;
+    },
+
+    resetInCartData(arr) {
+        for (let element of arr) {
+            element.inCart = 0;
+        }
     },
 });

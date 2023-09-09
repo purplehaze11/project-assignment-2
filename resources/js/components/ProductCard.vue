@@ -7,9 +7,9 @@
         />
         <div class="card-body">
             <h5 class="card-title">{{ product.name }}</h5>
-            <div>
-                <p class="card-text">harga: {{ product.harga }}</p>
-                <p class="card-text">stok: {{ product.stok }}</p>
+            <p class="card-text">Price: {{ product.harga }}</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <p class="m-0 card-text">Stock: {{ product.stok }}</p>
                 <ActionButton
                     v-if="product.stok != 0"
                     @click="reduceStock"
@@ -52,6 +52,7 @@ export default {
             this.product.inCart += 1;
             store.incrementTotalInCart();
             store.incrementTotalPrice(this.product.harga);
+            store.isAlreadyBought = false;
         },
     },
 };
@@ -59,6 +60,8 @@ export default {
 
 <style scoped>
 .card {
+    border: 1px solid black;
     margin: 2rem 0;
+    background-color: #f2fbfc;
 }
 </style>

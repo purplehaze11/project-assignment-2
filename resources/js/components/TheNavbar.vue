@@ -1,5 +1,5 @@
 <template>
-    <div id="navbar">
+    <div id="navbar" class="d-flex justify-content-center">
         <h1>Tosa</h1>
         <button
             class="btn btn-primary position-relative"
@@ -30,14 +30,10 @@
 </template>
 
 <script>
-import ActionButton from "./ActionButton.vue";
 import { store } from "../store.js";
 
 export default {
     name: "TheNavbar",
-    components: {
-        ActionButton,
-    },
     data() {
         return {
             store,
@@ -48,12 +44,17 @@ export default {
 
 <style scoped>
 #navbar {
-    padding: 2rem;
-    display: flex;
+    padding-top: 1rem;
+    border-bottom: 1px solid black;
+}
+
+h1 {
+    color: red;
 }
 
 button {
     width: 3rem;
     height: 3rem;
+    margin-left: 2rem;
 }
 </style>
