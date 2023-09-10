@@ -1,5 +1,5 @@
 <template>
-    <div class="flex-wrap d-flex justify-content-around">
+    <div class="flex-wrap d-flex justify-content-evenly">
         <ProductCard
             v-for="product in products"
             :product="product"
@@ -24,3 +24,9 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+div {
+    background-color: #f2f3f5;
+}
+</style>

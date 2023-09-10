@@ -4,7 +4,7 @@
             Total Item <span>{{ store.totalInCart }}</span>
         </p>
         <p>
-            Total Price <span>{{ store.totalPrice }}</span>
+            Total Price <span>Rp. {{ store.totalPrice }}</span>
         </p>
     </div>
 </template>

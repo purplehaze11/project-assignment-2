@@ -45,6 +45,7 @@ export default {
 <style scoped>
 #navbar {
     padding-top: 1rem;
+    background-color: #f2fbfc;
     border-bottom: 1px solid black;
 }
 

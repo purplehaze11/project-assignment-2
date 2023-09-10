@@ -16,10 +16,10 @@
             <ActionButton
                 class="btn-danger"
                 @click="clearProductInCart"
-                text="clear"
+                text="Clear"
             />
         </div>
-        <p>{{ product.harga }}</p>
+        <p>Rp. {{ product.harga }}</p>
     </div>
 </template>
 

@@ -42,7 +42,8 @@
                             store.totalInCart == 0
                         "
                     >
-                        Thank you for using Tosa!
+                        Thank you for using Tosa! Your total are Rp.
+                        {{ boughtTotal }}
                     </p>
                     <p v-else>You have no product in the cart</p>
                 </div>
@@ -85,6 +86,7 @@ export default {
     },
     methods: {
         buyProduct() {
+            this.boughtTotal = store.totalPrice;
             store.resetTotal();
             store.resetInCartData(this.products);
             store.isAlreadyBought = true;
@@ -93,6 +95,7 @@ export default {
     data() {
         return {
             store,
+            boughtTotal: "",
         };
     },
 };
